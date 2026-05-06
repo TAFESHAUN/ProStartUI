@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ProStartUI/ProStartUI.csproj" />
+  <Project Path="ProStartUIWinForm/ProStartUIWinForm.csproj" />
+</Solution>
