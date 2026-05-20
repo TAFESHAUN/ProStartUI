@@ -1,27 +1,39 @@
-﻿using System.Text;
+﻿using System.Configuration;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ProStartUI.DataModel;
+using ProStartUI.Repositories;
 
 namespace ProStartUI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly IRepo _repo;
         public MainWindow()
         {
             InitializeComponent();
+
+            string connStr = "Data Source=DESKTOP-FFSLR8G\\SQLEXPRESS01;Initial Catalog=ActivitiesDb;Integrated Security=True;Trust Server Certificate=True";
+
+            _repo = new ActivityRepoDB(connStr);
         }
 
-        //Add activity events
+        private void DisplayAll_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                List<Activity> activities = _repo.GetAllActivities();
+                ResultsGrid.ItemsSource = activities;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Could not load activities:\n{ex.Message}",
+                    "Database Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
 
     }
 }
