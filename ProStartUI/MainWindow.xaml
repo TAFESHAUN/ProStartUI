@@ -104,10 +104,10 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="Venue"
+                                <TextBlock Grid.Row="0" Text="Min Participants"
                                            FontSize="13" Margin="0,8,0,6"/>
                                 <TextBox Grid.Row="1" Style="{StaticResource FieldBox}"
-                                         x:Name="VenueBox" Margin="0,0,0,12"/>
+                                         x:Name="MinParticipantsBox" Margin="0,0,0,12"/>
                                 <Button Grid.Row="2" Content="Save Entertainment Activity"
                                         Style="{StaticResource ActionButton}"/>
                             </Grid>
