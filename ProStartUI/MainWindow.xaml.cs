@@ -35,5 +35,13 @@ namespace ProStartUI
             }
         }
 
+        // Add event handlers to buttons > Add, Update, Search (check your stored procedures & repo methods)
+        //Example search click event here
+        private void SearchActivities_Click(object sender, RoutedEventArgs e)
+        {
+            //Call DB search here
+
+        }
+
     }
 }
